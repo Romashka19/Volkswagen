@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     function main(){
-        return view("main");
+        return view("main/index");
     }
 
     function models(){
-        return view("models");
+        return view("main/models");
     }
 }
