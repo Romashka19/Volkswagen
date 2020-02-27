@@ -101,6 +101,9 @@
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YLP7IeBxTTa2KJwjkuyTjnG3Gr" />
@@ -156,6 +159,7 @@
       <updated>1582718732553</updated>
       <workItem from="1582718736754" duration="2522000" />
       <workItem from="1582724178579" duration="4338000" />
+      <workItem from="1582806496275" duration="4556000" />
     </task>
     <servers />
   </component>
