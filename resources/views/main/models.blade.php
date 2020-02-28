@@ -10,8 +10,8 @@
                     <p>орієнтовна вартість від ₴ 1 746 775*</p>
                 </div>
                 <div class="btn-action">
-                    <button class="action">Конфігуратор</button>
-                    <button class="action">Детальніше</button>
+                    <a class="action">Конфігуратор</a>
+                    <a href="../about/" class="action">Детальніше</a>
                 </div>
             </div>
         </div>
@@ -23,8 +23,8 @@
                     <p>орієнтовна вартість від ₴ 1 746 775*</p>
                 </div>
                 <div class="btn-action">
-                    <button class="action">Конфігуратор</button>
-                    <button class="action" href="/about/">Детальніше</button>
+                    <a class="action">Конфігуратор</a>
+                    <a class="action" href="">Детальніше</a>
                 </div>
             </div>
         </div>
@@ -36,8 +36,8 @@
                     <p>орієнтовна вартість від ₴ 1 746 775*</p>
                 </div>
                 <div class="btn-action">
-                    <button class="action">Конфігуратор</button>
-                    <button class="action">Детальніше</button>
+                    <a class="action">Конфігуратор</a>
+                    <a class="action" href="">Детальніше</a>
                 </div>
             </div>
         </div>
@@ -49,8 +49,8 @@
                     <p>орієнтовна вартість від ₴ 1 746 775*</p>
                 </div>
                 <div class="btn-action">
-                    <button class="action">Конфігуратор</button>
-                    <button class="action">Детальніше</button>
+                    <a class="action">Конфігуратор</a>
+                    <a class="action" href="">Детальніше</a>
                 </div>
             </div>
         </div>
@@ -62,8 +62,8 @@
                     <p>орієнтовна вартість від ₴ 1 746 775*</p>
                 </div>
                 <div class="btn-action">
-                    <button class="action">Конфігуратор</button>
-                    <button class="action">Детальніше</button>
+                    <a class="action">Конфігуратор</a>
+                    <a class="action" href="">Детальніше</a>
                 </div>
             </div>
         </div>
@@ -75,8 +75,8 @@
                     <p>орієнтовна вартість від ₴ 1 746 775*</p>
                 </div>
                 <div class="btn-action">
-                    <button class="action">Конфігуратор</button>
-                    <button class="action">Детальніше</button>
+                    <a class="action">Конфігуратор</a>
+                    <a class="action" href="">Детальніше</a>
                 </div>
             </div>
         </div>

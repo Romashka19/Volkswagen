@@ -12,5 +12,7 @@
 */
 
 Route::get('/', "PageController@main");
-Route::get('/models',"PageController@models");
-Route::get('/about/',"AboutController@index");
+Route::get('models',"PageController@models");
+Route::get('admin',"AdminController@index");
+Route::get('admin',"AdminController@store");
+Route::get('about',"AboutController@index");

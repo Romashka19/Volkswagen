@@ -17,6 +17,7 @@ class CreateComplectationsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->char('name');
+
             $table->unsignedBigInteger('engine_id');
             $table->unsignedBigInteger('gearbox_id');
             $table->unsignedBigInteger('model_id');

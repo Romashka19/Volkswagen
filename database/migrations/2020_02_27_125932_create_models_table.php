@@ -18,8 +18,13 @@ class CreateModelsTable extends Migration
             $table->timestamps();
             $table->char('name');
             $table->integer('price');
-            $table->integer('description');
             $table->char('photo');
+            $table->char('other_text');
+            $table->char('tagline');
+            $table->char('title_first');
+            $table->char('text_first');
+            $table->char('title_second');
+            $table->char('text_second');
         });
     }
 
