@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71166cbb-ac3d-4752-9a6b-58b422af4787" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,35 +120,37 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\views\admin" />
-      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\resources\views\main" />
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\public" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\sass" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\js" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\app" />
+      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\app\Models" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\views\admin" />
+      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\resources\views\main" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -165,6 +168,7 @@
       <workItem from="1582835777600" duration="1940000" />
       <workItem from="1582887554425" duration="64000" />
       <workItem from="1582891827229" duration="15236000" />
+      <workItem from="1583065635615" duration="13758000" />
     </task>
     <servers />
   </component>

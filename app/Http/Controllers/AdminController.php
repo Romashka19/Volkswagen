@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
+use App\Complectation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,22 +30,26 @@ class AdminController extends Controller
         ]);
     }
 
-    function store(){
-        $complectations = DB::select('select * from complectations');
-/*
-        $complectations->engine_id = \request('id_engine');
-        $complectations->gearbox_id = \request('id_gearbox');
-        $complectations->model_id = \request('id_model');
+    public function create()
+    {
 
-        $complectations->save();
-*/
+    }
+
+    function store(Request $request){
+        Complectation::create([
+            'name' => $request->name,
+            'engine_id' => $request->engine_id,
+            'model_id' => $request->model_id,
+            'gearbox_id' => $request->gearbox_id,
+        ]);
+        return redirect('/admin');
     }
 
     function update(){
 
     }
 
-    function delete(){
+    function destroy(){
 
     }
 }

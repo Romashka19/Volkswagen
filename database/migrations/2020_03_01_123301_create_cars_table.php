@@ -20,19 +20,17 @@ class CreateCarsTable extends Migration
             $table->unsignedBigInteger('complectation_id');
             $table->unsignedBigInteger('color_id');
             $table->unsignedBigInteger('interior_id');
-
-            $table->foreign('complectation_id')
-                ->references('id')
-                ->on('complectations');
-
-            $table->foreign('color_id')
-                ->references('id')
-                ->on('colors');
+            $table->integer("price");
 
             $table->foreign('wheels_id')
                 ->references('id')
                 ->on('wheels');
-
+            $table->foreign('complectation_id')
+                ->references('id')
+                ->on('complectations');
+            $table->foreign('color_id')
+                ->references('id')
+                ->on('colors');
             $table->foreign('interior_id')
                 ->references('id')
                 ->on('interiors');

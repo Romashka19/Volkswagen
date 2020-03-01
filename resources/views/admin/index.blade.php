@@ -195,62 +195,33 @@
                     <h5 class="modal-title" id="create_modal_Label">CREATE</h5>
                 </div>
                 <div class="modal-body">
-                    <select class="custom-select custom-select-lg">
-                        <option selected disabled>Выберите Двигатель</option>
-                        @foreach($engines as $engine)
-                            <option id="id_engine" value="{{ $engine->id }}">{{ $engine->name }}</option>
-                        @endforeach
-                    </select>
-                    <select class="custom-select custom-select-lg">
-                        <option selected disabled>Выберите модель машини</option>
-                        @foreach($models as $model)
-                            <option id="id_model" value="{{ $model->id }}">{{ $model->name }}</option>
-                        @endforeach
-                    </select>
-                    <select class="custom-select custom-select-lg">
-                        <option selected disabled>Выберите коробку передач</option>
-                        @foreach($gearboxes as $gearbox)
-                            <option id="id_gearbox" value="{{ $gearbox->id }}">{{ $gearbox->name }}</option>
-                        @endforeach
-                    </select>
+                    <form>
+                        {{ csrf_field() }}
+                        <p>Назва комплектації</p>
+                        <input type="text" id="name-comlectation">
+                        <select class="custom-select custom-select-lg" id="engine-select">
+                            <option selected disabled>Выберите Двигатель</option>
+                            @foreach($engines as $engine)
+                                <option id="id_engine" value="{{ $engine->id }}">{{ $engine->name }}</option>
+                            @endforeach
+                        </select>
+                        <select class="custom-select custom-select-lg" id="model-select">
+                            <option selected disabled>Выберите модель машини</option>
+                            @foreach($models as $model)
+                                <option id="id_model" value="{{ $model->id }}">{{ $model->name }}</option>
+                            @endforeach
+                        </select>
+                        <select class="custom-select custom-select-lg" id="gearbox-select">
+                            <option selected disabled>Выберите коробку передач</option>
+                            @foreach($gearboxes as $gearbox)
+                                <option id="id_gearbox" value="{{ $gearbox->id }}">{{ $gearbox->name }}</option>
+                            @endforeach
+                        </select>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="update_modal" tabindex="-1" role="dialog" aria-labelledby="update_modal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="update_modal_Label">Update</h5>
-                </div>
-                <div class="modal-body">
-                    <select class="custom-select">
-                        <option selected disabled>Выберите Двигатель</option>
-                        @foreach($engines as $engine)
-                            <option value="{{ $engine->id }}">{{ $engine->name }}</option>
-                        @endforeach
-                    </select>
-                    <select class="custom-select">
-                        <option selected disabled>Выберите модель машшини</option>
-                        @foreach($models as $model)
-                            <option value="{{ $model->id }}">{{ $model->name }}</option>
-                        @endforeach
-                    </select>
-                    <select class="custom-select">
-                        <option selected disabled>Выберите коробку передач</option>
-                        @foreach($gearboxes as $gearbox)
-                            <option value="{{ $gearbox->id }}">{{ $gearbox->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary" id="save-compl">Save</button>
                 </div>
             </div>
         </div>
@@ -274,7 +245,30 @@
     </div>
 <!--------------------------------------->
     <script>
+        $(document).ready(function () {
+            $('#save-compl').on('click',function () {
+                let name = $("#name-comlectation").val();
+                let engine_id = $("#engine-select").val();
+                let model_id = $("#model-select").val();
+                let gearbox_id = $("#gearbox-select").val();
 
+                $.ajax({
+                    url : '{{ route('admin.store') }}',
+                    type: 'post',
+                    dataType: "json",
+                    data : {
+                        engine_id : engine_id, model_id:model_id, gearbox_id:gearbox_id,name:name,
+                        _token: "{!! csrf_token() !!}"
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success:function () {
+                        location.href="admin";
+                    }
+                });
+            })
+        })
     </script>
 
 @endsection
