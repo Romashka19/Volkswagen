@@ -13,9 +13,9 @@ class PageController extends Controller
     }
 
     function models(){
-        $cars = DB::select('select * from cars');
+        $models = DB::select('select * from models');
         return view("main/models",[
-            'cars' => $cars,
+            'models' => $models,
         ]);
     }
 

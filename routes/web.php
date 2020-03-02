@@ -12,6 +12,6 @@
 */
 
 Route::get('/', "PageController@main");
-Route::get('models',"PageController@models");
+Route::get('models/',"PageController@models")->name('models');
 Route::resource('admin',"AdminController");
-Route::get('about',"AboutController@index");
+Route::get('about/{id}',"AboutController@index")->name('about');

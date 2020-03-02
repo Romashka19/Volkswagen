@@ -158,7 +158,7 @@
                 </table>
                 <!----------------------------------------------------------------------------------------------------------->
                 <h1>Complectations</h1>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal">create</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal_cmpl">create</button>
                 <table>
                     <thead>
                     <tr>
@@ -171,24 +171,53 @@
                     </tr>
                     @foreach($complectations as $complectation)
                         <tr>
-                            <td>{{ $complectation->id }}</td>
+                            <td >{{ $complectation->id }}</td>
                             <td>{{ $complectation->name }}</td>
                             <td>{{ $complectation->engine_id }}</td>
                             <td>{{ $complectation->gearbox_id }}</td>
                             <td>{{ $complectation->model_id }}</td>
                             <td>
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#update_modal">Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_modal">Delete</button>
+                                <button type="button" class="btn btn-danger delete-coml"  data-value=" {{ $complectation->id }}">Delete</button>
                             </td>
                         </tr>
                     @endforeach
                     </thead>
                 </table>
+                <!----------------------------------------------------------------------------------------------------------->
+                <h1>Cars</h1>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal_cars">create</button>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Wheels_id</th>
+                        <th>Complectation_id</th>
+                        <th>Color_id</th>
+                        <th>Interior_id</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    @foreach($cars as $car)
+                        <tr>
+                            <td >{{ $car->id }}</td>
+                            <td>{{ $car->wheels_id }}</td>
+                            <td>{{ $car->complectation_id }}</td>
+                            <td>{{ $car->color_id }}</td>
+                            <td>{{ $car->interior_id }}</td>
+                            <td>{{ $car->price }}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger delete-car"  data-value=" {{ $car->id }}">Delete</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </thead>
+                </table>
+                <!------->
             </div>
         </div>
     </div>
 <!---------------------------------->
-    <div class="modal fade" id="create_modal" tabindex="-1" role="dialog" aria-labelledby="create_modal" aria-hidden="true">
+    <div class="modal fade" id="create_modal_cmpl" tabindex="-1" role="dialog" aria-labelledby="create_modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -227,18 +256,47 @@
         </div>
     </div>
 
-    <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="delete_modal" aria-hidden="true">
+    <div class="modal fade" id="create_modal_cars" tabindex="-1" role="dialog" aria-labelledby="create_modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="delete_modal_Label">DELETE</h5>
+                    <h5 class="modal-title" id="create_modal_Label">CREATE</h5>
                 </div>
                 <div class="modal-body">
-
+                    <form>
+                        {{ csrf_field() }}
+                        <p>Авто</p>
+                        <select class="custom-select custom-select-lg" id="wheels-select">
+                            <option selected disabled>Выберите колеса</option>
+                            @foreach($wheels as $wheel)
+                                <option id="id_engine" value="{{ $wheel->id }}">{{ $wheel->name }}</option>
+                            @endforeach
+                        </select>
+                        <select class="custom-select custom-select-lg" id="complectation-select">
+                            <option selected disabled>Выберите комплектацию</option>
+                            @foreach($complectations as $complectation)
+                                <option id="id_model" value="{{ $complectation->id }}">{{ $complectation->name }}</option>
+                            @endforeach
+                        </select>
+                        <select class="custom-select custom-select-lg" id="color-select">
+                            <option selected disabled>Выберите цвет</option>
+                            @foreach($colors as $color)
+                                <option id="id_gearbox" value="{{ $color->id }}">{{ $color->name }}</option>
+                            @endforeach
+                        </select>
+                        <select class="custom-select custom-select-lg" id="interior-select">
+                            <option selected disabled>Выберите интерьер</option>
+                            @foreach($interiors as $interior)
+                                <option id="id_gearbox" value="{{ $interior->id }}">{{ $interior->name }}</option>
+                            @endforeach
+                        </select>
+                        <p>цена</p>
+                        <input type="text" id="car-price">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary" id="save-car">Save</button>
                 </div>
             </div>
         </div>
@@ -251,13 +309,14 @@
                 let engine_id = $("#engine-select").val();
                 let model_id = $("#model-select").val();
                 let gearbox_id = $("#gearbox-select").val();
+                let table_name = 'comlectation';
 
                 $.ajax({
                     url : '{{ route('admin.store') }}',
                     type: 'post',
                     dataType: "json",
                     data : {
-                        engine_id : engine_id, model_id:model_id, gearbox_id:gearbox_id,name:name,
+                        engine_id : engine_id, model_id:model_id, gearbox_id:gearbox_id,name:name,table_name:table_name,
                         _token: "{!! csrf_token() !!}"
                     },
                     headers: {
@@ -267,6 +326,86 @@
                         location.href="admin";
                     }
                 });
+            })
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#save-car').on('click',function () {
+                let wheels_id = $("#wheels-select").val();
+                let complectation_id = $("#complectation-select").val();
+                let color_id = $("#color-select").val();
+                let interior_id = $("#interior-select").val();
+                let price = $("#car-price").val();
+                let table_name = 'cars';
+
+                $.ajax({
+                    url : '{{ route('admin.store') }}',
+                    type: 'post',
+                    dataType: "json",
+                    data : {
+                        wheels_id : wheels_id, complectation_id:complectation_id, color_id:color_id,interior_id:interior_id,car_price:price,table_name:table_name,
+                        _token: "{!! csrf_token() !!}"
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success:function () {
+                        location.href="admin";
+                    }
+                });
+            })
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.delete-coml').on('click',function () {
+                let id = $(this).data('value');
+                let table_name = 'comlectation';
+                $.ajax({
+                    url : '/admin/' + id,
+                    type: 'post',
+                    dataType: "json",
+                    data : {
+                        table_name:table_name,
+                        _method: 'delete',
+                        _token: "{!! csrf_token() !!}"
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success:function () {
+                        location.href="admin";
+                    }
+                });
+
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.delete-car').on('click',function () {
+                let id = $(this).data('value');
+                let table_name = 'cars';
+                $.ajax({
+                    url : '/admin/' + id,
+                    type: 'post',
+                    dataType: "json",
+                    data : {
+                        table_name:table_name,
+                        _method: 'delete',
+                        _token: "{!! csrf_token() !!}"
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success:function () {
+                        location.href="admin";
+                    }
+                });
+
             })
         })
     </script>
