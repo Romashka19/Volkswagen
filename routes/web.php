@@ -15,3 +15,4 @@ Route::get('/', "PageController@main");
 Route::get('models/',"PageController@models")->name('models');
 Route::resource('admin',"AdminController");
 Route::get('about/{id}',"AboutController@index")->name('about');
+Route::resource('configurate',"ConfigurateController");

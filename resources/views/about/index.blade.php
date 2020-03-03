@@ -54,9 +54,9 @@
                     </tr>
                     <tr>
                         <td>Двигун</td>
-                        <td>4-х циліндровий, бензиновий/4</td>
-                        <td>4-х циліндровий, бензиновий/4</td>
-                        <td>4-х циліндровий, бензиновий/4</td>
+                        @foreach($model->complectations as $complectation)
+                            <td>{{ $complectation->engines->name }}</td>
+                        @endforeach
                     </tr>
                     <tr>
                         <td>Масса</td>
@@ -66,9 +66,9 @@
                     </tr>
                     <tr>
                         <td>Путужність</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach($model->complectations as $complectation)
+                            <td>{{ $complectation->engines->power }}</td>
+                        @endforeach
                     </tr>
                     <tr>
                         <td>Втрати палива</td>
@@ -84,9 +84,15 @@
                     </tr>
                     <tr>
                         <td>Коробка передач</td>
-                        <td>5-cтупенева механічна</td>
-                        <td>6-cтупенева механічна</td>
-                        <td>7-ступенева автоматична DSG</td>
+                        @foreach($model->complectations as $complectation)
+                            <td>{{ $complectation->gearboxes->type }},{{ $complectation->gearboxes->gears_count }} передач</td>
+                        @endforeach
+                    </tr>
+                    <tr>
+                        <td>Ціна</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td></td>

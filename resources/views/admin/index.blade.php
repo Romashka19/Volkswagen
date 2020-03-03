@@ -309,14 +309,13 @@
                 let engine_id = $("#engine-select").val();
                 let model_id = $("#model-select").val();
                 let gearbox_id = $("#gearbox-select").val();
-                let table_name = 'comlectation';
 
                 $.ajax({
                     url : '{{ route('admin.store') }}',
                     type: 'post',
                     dataType: "json",
                     data : {
-                        engine_id : engine_id, model_id:model_id, gearbox_id:gearbox_id,name:name,table_name:table_name,
+                        engine_id : engine_id, model_id:model_id, gearbox_id:gearbox_id,name:name,
                         _token: "{!! csrf_token() !!}"
                     },
                     headers: {
@@ -338,14 +337,13 @@
                 let color_id = $("#color-select").val();
                 let interior_id = $("#interior-select").val();
                 let price = $("#car-price").val();
-                let table_name = 'cars';
 
                 $.ajax({
                     url : '{{ route('admin.store') }}',
                     type: 'post',
                     dataType: "json",
                     data : {
-                        wheels_id : wheels_id, complectation_id:complectation_id, color_id:color_id,interior_id:interior_id,car_price:price,table_name:table_name,
+                        wheels_id : wheels_id, complectation_id:complectation_id, color_id:color_id,interior_id:interior_id,price:price,
                         _token: "{!! csrf_token() !!}"
                     },
                     headers: {

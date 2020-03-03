@@ -31,25 +31,14 @@ class AdminController extends Controller
         ]);
     }
 
-
     function store(Request $request){
-        $table_name = $request->table_name;
-        if($table_name == 'comlectation'){
-            Complectation::create([
-                'name' => $request->name,
-                'engine_id' => $request->engine_id,
-                'model_id' => $request->model_id,
-                'gearbox_id' => $request->gearbox_id,
-            ]);
-        }elseif ($table_name == 'cars'){
-            Cars::create([
-                'wheels_id' => $request->wheels_id,
-                'complectation_id' => $request->complectation_id,
-                'color_id' => $request->color_id,
-                'interior_id' => $request->interior_id,
-                'price' => $request->car_price
-            ]);
-        }
+        $create_car = new Cars();
+        $create_car->wheels_id = $request->wheels_id;
+        $create_car->complectation_id = $request->complectation_id;
+        $create_car->color_id = $request->color_id;
+        $create_car->interior_id = $request->interior_id;
+        $create_car->price = $request->price;
+        $create_car->save();
         return redirect('/admin');
     }
 

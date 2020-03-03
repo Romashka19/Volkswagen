@@ -22,9 +22,9 @@
         <div class="container"><a class="toggle-button-menu"><span class="bar-menu"></span><span class="bar-menu"></span><span class="bar-menu"></span></a>
             <div class="menu wrapper">
                 <ul class="menuBottom">
-                    <li><a href="/" class="link">Головна</a></li>
-                    <li><a href="{{route('models')}}" class="link">Моделі</a></li>
-                    <li><a class="link">Конфігуратор</a></li>
+                    <li><a href="{{ asset('/') }}" class="link">Головна</a></li>
+                    <li><a href="{{ asset(route('models')) }}" class="link">Моделі</a></li>
+                    <li><a href="{{ asset('configurate') }}" class="link">Конфігуратор</a></li>
                     <li><a class="link">Акції</a></li>
                     <li><a class="link B">Volkswagen</a></li>
                 </ul>
@@ -32,7 +32,7 @@
                     <p class="logo-text">Volkswagen</p>
                 </div>
                 <ul class="menuTop">
-                    <li><a href="admin" class="linkAuth">ADMIN</a></li>
+                    <li><a href="{{ asset('admin') }}" class="linkAuth">ADMIN</a></li>
                     <li><a class="linkAuth">SingIn</a></li>
                     <li><a class="linkAuth">Register</a></li>
                 </ul>
