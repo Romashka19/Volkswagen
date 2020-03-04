@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cars;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class ConfigurateController extends Controller
@@ -21,13 +22,15 @@ class ConfigurateController extends Controller
         ]);
     }
 
-    function store(Request $request){
-        $create_car = new Cars();
-        $create_car->wheels_id = $request->wheels_id;
-        $create_car->complectation_id = $request->complectation_id;
-        $create_car->color_id = $request->color_id;
-        $create_car->interior_id = $request->interior_id;
-        $create_car->price = $request->price;
-        $create_car->save();
+    function createCustomCar(Request $request){
+        $costom_car = Cars::create([
+            'wheels_id'  => $request->wheels_id,
+            'complectation_id' => $request->complectation_id,
+            'color_id' => $request->color_id,
+            'interior_id' => $request->interior_id,
+            'price' => '1000000',
+        ]);
+        return view('main/index');
     }
+
 }

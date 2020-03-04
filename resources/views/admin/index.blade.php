@@ -311,7 +311,7 @@
                 let gearbox_id = $("#gearbox-select").val();
 
                 $.ajax({
-                    url : '{{ route('admin.store') }}',
+                    url : 'admin/createCompl',
                     type: 'post',
                     dataType: "json",
                     data : {
@@ -339,7 +339,7 @@
                 let price = $("#car-price").val();
 
                 $.ajax({
-                    url : '{{ route('admin.store') }}',
+                    url : 'admin/createCar',
                     type: 'post',
                     dataType: "json",
                     data : {
@@ -361,14 +361,11 @@
         $(document).ready(function () {
             $('.delete-coml').on('click',function () {
                 let id = $(this).data('value');
-                let table_name = 'comlectation';
                 $.ajax({
                     url : '/admin/' + id,
                     type: 'post',
                     dataType: "json",
                     data : {
-                        table_name:table_name,
-                        _method: 'delete',
                         _token: "{!! csrf_token() !!}"
                     },
                     headers: {
@@ -386,14 +383,11 @@
         $(document).ready(function () {
             $('.delete-car').on('click',function () {
                 let id = $(this).data('value');
-                let table_name = 'cars';
                 $.ajax({
                     url : '/admin/' + id,
                     type: 'post',
                     dataType: "json",
                     data : {
-                        table_name:table_name,
-                        _method: 'delete',
                         _token: "{!! csrf_token() !!}"
                     },
                     headers: {

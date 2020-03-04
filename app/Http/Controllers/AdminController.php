@@ -31,31 +31,34 @@ class AdminController extends Controller
         ]);
     }
 
-    function store(Request $request){
-        $create_car = new Cars();
-        $create_car->wheels_id = $request->wheels_id;
-        $create_car->complectation_id = $request->complectation_id;
-        $create_car->color_id = $request->color_id;
-        $create_car->interior_id = $request->interior_id;
-        $create_car->price = $request->price;
-        $create_car->save();
-        return redirect('/admin');
+    function createCar(Request $request){
+        $car = Cars::create([
+            'wheels_id'  => $request->wheels_id,
+            'complectation_id' => $request->complectation_id,
+            'color_id' => $request->color_id,
+            'interior_id' => $request->interior_id,
+            'price' => $request->price,
+        ]);
     }
 
-    function update(){
-
+    function createCompl(Request $request){
+        $complectation = Complectation::create([
+            'name'  => $request->name,
+            'engine_id' => $request->engine_id,
+            'model_id' => $request->model_id,
+            'gearbox_id' => $request->gearbox_id,
+        ]);
     }
 
-    function destroy($id , Request $request){
-        $table_name = $request->table_name;
-
-        if($table_name == 'complectation'){
-            $complectation = Complectation::find($id);
-            $complectation->delete();
-        }elseif ($table_name == 'cars'){
-            $car = Cars::find($id);
-            $car->delete();
-        }
-
+    function deleteCompl($id , Request $request){
+        $complectation = Complectation::find($id);
+        $complectation->delete();
     }
+
+    function deleteCar($id , Request $request){
+        $car = Cars::find($id);
+        $car->delete();
+    }
+
+
 }
