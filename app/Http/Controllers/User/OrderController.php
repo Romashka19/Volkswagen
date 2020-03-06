@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers\User;
+
+use App\Models\Order;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class OrderController extends Controller
+{
+    function createOrder(Request $request){
+        $car = Order::create([
+            'car_id'  => $request->car_id,
+            'user_id' => $request->user_id,
+            'address' => $request->address,
+        ]);
+        return redirect('main/index');
+    }
+}

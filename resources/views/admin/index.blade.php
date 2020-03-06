@@ -1,4 +1,4 @@
-@extends("layout")
+@extends("layouts.layout")
 
 @section("page-content")
     <div class="equipment-container">
@@ -250,7 +250,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="save-compl">Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save-compl">Save</button>
                 </div>
             </div>
         </div>
@@ -296,7 +296,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="save-car">Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save-car">Save</button>
                 </div>
             </div>
         </div>
@@ -321,8 +321,10 @@
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    success:function () {
-                        location.href="admin";
+                    success: function(response){
+                        if(response.data){
+                            $(".modal").modal("hide");
+                        }
                     }
                 });
             })

@@ -101,9 +101,7 @@
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YLP7IeBxTTa2KJwjkuyTjnG3Gr" />
@@ -115,7 +113,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pendella.test" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -126,11 +124,11 @@
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\app" />
-      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\app\Models" />
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\views\admin" />
-      <recent name="D:\Program\OSpanel\OSPanel\domains\Volkswagen\resources\views\main" />
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app\Http\Controllers\User" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app\Models" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\views\layouts" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -170,7 +168,9 @@
       <workItem from="1583065635615" duration="13758000" />
       <workItem from="1583144681407" duration="16052000" />
       <workItem from="1583239077140" duration="9841000" />
-      <workItem from="1583327257101" duration="7438000" />
+      <workItem from="1583327257101" duration="9955000" />
+      <workItem from="1583408323770" duration="14492000" />
+      <workItem from="1583490289487" duration="16273000" />
     </task>
     <servers />
   </component>
@@ -178,13 +178,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583250364147">
+    <state x="714" y="56" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583502045180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583250364147" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1582722025595">
+    <state x="714" y="56" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583502045180" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583501993038">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582722025595" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583501993038" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1583408736076">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583408736076" />
   </component>
 </project>

@@ -1,4 +1,11 @@
-@extends("layout")
+@extends("layouts.layout")
+
+@push('scripts')
+    <script src="{{ asset('js/owners.js') }}"></script>
+    <script>
+        urlRoute['order'] = "{{ route('orderCreate') }}";
+    </script>
+@endpush
 
 @section("page-content")
     <div class="car-container">
@@ -85,7 +92,7 @@
                     <tr>
                         <td>Коробка передач</td>
                         @foreach($model->complectations as $complectation)
-                            <td>{{ $complectation->gearboxes->type }},{{ $complectation->gearboxes->gears_count }} передач</td>
+                            <td>{{ $complectation->gearboxes->type }}/{{ $complectation->gearboxes->gears_count }} передач</td>
                         @endforeach
                     </tr>
                     <tr>
@@ -96,12 +103,37 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><button class="btn btn-primary">Купити</button></td>
-                        <td><button class="btn btn-primary">Купити</button></td>
-                        <td><button class="btn btn-primary">Купити</button></td>
+                        @foreach($model->complectations as $complectation)
+                            @foreach($complectation->cars as $car)
+                                <td><button value="{{ $car->id }}" id="car-id" class="btn btn-primary" data-toggle="modal" data-target="#create_order">Купити</button></td>
+                            @endforeach
+                        @endforeach
                     </tr>
                 </table>
             </div>
         </div>
     </div>
+    <!---------------------------------------------------------------->
+    <div class="modal fade" id="create_order" tabindex="-1" role="dialog" aria-labelledby="create_modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="create_modal_Label">CREATE</h5>
+                </div>
+                <div class="modal-body">
+                    <p>адреса куди доставити авто</p>
+                    <input type="text" id="address">
+                    <input type="hidden" value="{{ Auth::user()->id }}" id="user_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary" id="save-order">Замовити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------->
+
+
 @endsection
