@@ -11,7 +11,7 @@
                         <p>орієнтовна вартість від ₴ {{ $model->price }}*</p>
                     </div>
                     <div class="btn-action">
-                        <a class="action">Конфігуратор</a>
+                        <a href="{{route('configurate', [ 'id' => $model->id ])}}" class="action">Конфігуратор</a>
                         <a href="{{route('about', [ 'id' => $model->id ])}}" class="action">Детальніше</a>
                     </div>
                 </div>

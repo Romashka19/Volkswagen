@@ -25,7 +25,7 @@ Route::delete('admin/deleteCompl',"Admin\AdminController@deleteCompl");
 Route::get('about/{id}',"User\AboutController@index")->name('about');
 Route::post('about/createOrder',['as' => 'orderCreate','uses' => "User\OrderController@createOrder"]);
 
-Route::get('configurate',"User\ConfigurateController@index");
+Route::get('configurate/{id}',"User\ConfigurateController@index")->name('configurate');
 Route::post('configurate',"User\ConfigurateController@createCustomCar");
 
 

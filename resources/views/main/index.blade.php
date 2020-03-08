@@ -51,9 +51,9 @@
                     <h1>Створіть власне авто в нашому конфігураторі</h1>
                 </div>
                 <div class="custom-cars wrapper">
-                    <div class="carItem"><img src="img/custom1.png"/><i class="fas fa-chevron-right"></i><a> Jetta</a></div>
+                    <div class="carItem"><img src="img/custom1.png"/><i class="fas fa-chevron-right"></i><a>Polo sedan</a></div>
                     <div class="carItem"><img src="img/custom2.png"/><i class="fas fa-chevron-right"></i><a>Arteon</a></div>
-                    <div class="carItem"><img src="img/custom1.png"/><i class="fas fa-chevron-right"></i><a>Passat</a></div>
+                    <div class="carItem"><img src="img/custom3.png"/><i class="fas fa-chevron-right"></i><a>Polo</a></div>
                 </div>
             </div>
         </div>

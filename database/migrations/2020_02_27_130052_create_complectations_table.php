@@ -22,17 +22,6 @@ class CreateComplectationsTable extends Migration
             $table->unsignedBigInteger('gearbox_id');
             $table->unsignedBigInteger('model_id');
 
-            $table->foreign('engine_id')
-                ->references('id')
-                ->on('engines');
-
-            $table->foreign('gearbox_id')
-                ->references('id')
-                ->on('gearboxes');
-
-            $table->foreign('model_id')
-                ->references('id')
-                ->on('models');
         });
     }
 

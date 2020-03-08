@@ -19,6 +19,9 @@ class CreateModelsTable extends Migration
             $table->char('name');
             $table->integer('price');
             $table->char('photo');
+            $table->char('photo_first');
+            $table->char('photo_second');
+            $table->char('photo_customise');
             $table->char('other_text');
             $table->char('tagline');
             $table->char('title_first');

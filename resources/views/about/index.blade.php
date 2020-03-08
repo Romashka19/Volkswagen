@@ -29,7 +29,7 @@
                     <h3>Знає, що безпека перш за все</h3>
                     <p>{{ $model->text_first }}</p>
                 </div>
-                <div style="background-image: url({{ asset('img/polo-back.png') }})" class="img"></div>
+                <div style="background-image: url({{ asset($model->photo_first) }})" class="img"></div>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
                     <h3>Автомобіль - зона комфорту на ходу</h3>
                     <p>{{ $model->text_second }}</p>
                 </div>
-                <div style="background-image: url(img/polo-inside.png)" class="img"></div>
+                <div style="background-image: url({{asset($model->photo_second)}})" class="img"></div>
             </div>
         </div>
     </div>

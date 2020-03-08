@@ -20,13 +20,6 @@ class CreateOrderTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->char('address');
 
-            $table->foreign('car_id')
-                ->references('id')
-                ->on('cars');
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users');
         });
     }
 
