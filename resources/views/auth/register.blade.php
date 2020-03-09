@@ -13,19 +13,19 @@
             <div class="auth wrapper">
                 <div class="field">
                     <label for="name">Name</label>
-                    <input id="register_name" type="text">
+                    <input required id="register_name" type="text">
                 </div>
                 <div class="field">
                     <label for="email">Email</label>
-                    <input id="register_email" type="email">
+                    <input required id="register_email" type="email">
                 </div>
                 <div class="field">
                     <label for="password">Password</label>
-                    <input id="register_password" type="password">
+                    <input required id="register_password" type="password">
                 </div>
                 <div class="field">
                     <label for="phone">Phone</label>
-                    <input id="register_phone" type="phone">
+                    <input required id="register_phone" type="phone">
                 </div>
                 <div>
                     <button class="conflim" id="registerBtn" type="submit">Register</button>

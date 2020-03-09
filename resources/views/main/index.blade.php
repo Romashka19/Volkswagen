@@ -7,21 +7,21 @@
                 <div class="slide-inner container">
                     <p>Для найвибагливіших кліентів</p>
                     <h1>Найновіший Arteon</h1>
-                    <button class="btnSwiper">	Дізнатися більше		</button>
+                    <a href="{{route('about', [ '8' ])}}" class="btnSwiper">	Дізнатися більше		</a>
                 </div>
             </div>
             <div style=" background-image: url(img/swipe1.jpg)" class="swiper-slide">
                 <div class="slide-inner container">
                     <p>Для самих самих</p>
-                    <h1>Концепт Golf GTI</h1>
-                    <button class="btnSwiper">	Дізнатися більше</button>
+                    <h1>Новий Golf GTI</h1>
+                    <a href="{{route('about', [ '4' ])}}" class="btnSwiper">	Дізнатися більше</a>
                 </div>
             </div>
             <div style="background-image: url(img/swipe3.jpg)" class="swiper-slide">
                 <div class="slide-inner container">
                     <p>Вибір комфорту та елегантності</p>
-                    <h1>Volkswagen Jetta</h1>
-                    <button class="btnSwiper">	Дізнатися більше</button>
+                    <h1>Volkswagen Polo Super</h1>
+                    <a href="{{route('about', [ '1' ])}}" class="btnSwiper">	Дізнатися більше</a>
                 </div>
             </div>
         </div>

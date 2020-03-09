@@ -101,19 +101,29 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        @foreach($model->complectations as $complectation)
-                            @foreach($complectation->cars as $car)
-                                <td><button value="{{ $car->id }}" id="car-id" class="btn btn-primary" data-toggle="modal" data-target="#create_order">Купити</button></td>
+                    @guest
+                        <tr>
+                            <td></td>
+                            <td>Щоб купити авто увуйдыть в акаунт</td>
+                            <td>Щоб купити авто увуйдыть в акаунт</td>
+                            <td>Щоб купити авто увуйдыть в акаунт</td>
+                        </tr>
+                    @else
+                        <tr>
+                            <td></td>
+                            @foreach($model->complectations as $complectation)
+                                @foreach($complectation->cars as $car)
+                                    <td><button value="{{ $car->id }}" id="car-id" class="btn btn-primary" data-toggle="modal" data-target="#create_order">Купити</button></td>
+                                @endforeach
                             @endforeach
-                        @endforeach
-                    </tr>
+                        </tr>
+                    @endguest
                 </table>
             </div>
         </div>
     </div>
     <!---------------------------------------------------------------->
+    @auth
     <div class="modal fade" id="create_order" tabindex="-1" role="dialog" aria-labelledby="create_modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -122,17 +132,17 @@
                 </div>
                 <div class="modal-body">
                     <p>адреса куди доставити авто</p>
-                    <input type="text" id="address">
+                    <input required type="text" id="address">
                     <input type="hidden" value="{{ Auth::user()->id }}" id="user_id">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
-                    <button type="button" class="btn btn-primary" id="save-order">Замовити</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save-order">Замовити</button>
                 </div>
             </div>
         </div>
     </div>
-
+    @endauth
     <!----------------------->
 
 

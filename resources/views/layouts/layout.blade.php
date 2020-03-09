@@ -25,6 +25,7 @@
                 <ul class="menuBottom">
                     <li><a href="{{ asset('/') }}" class="link">Головна</a></li>
                     <li><a href="{{ asset(route('models')) }}" class="link">Моделі</a></li>
+                    <li><a  class="link">Конфігуратор</a></li>
                     <li><a class="link">Акції</a></li>
                     <li><a class="link B">Volkswagen</a></li>
                 </ul>

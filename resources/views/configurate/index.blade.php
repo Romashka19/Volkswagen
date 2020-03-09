@@ -1,5 +1,6 @@
 @extends("layouts.layout")
 
+
 @section("page-content")
     <div class="customise-container">
         <div class="container">
@@ -42,10 +43,14 @@
                                 <option value="{{ $interior->id }}">{{ $interior->material }}-{{ $interior->color }}</option>
                             @endforeach
                         </select>
+                        <p>Aдреса куди доставити авто</p>
+                        <input required type="text" name="address">
+                        <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <button type="submit" class="save-car">Зберегти</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

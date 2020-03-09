@@ -16,7 +16,18 @@
                     phone: phone,
                     access:access,
                     _token: csrfToken
+                },
+                success: function(answer) {
+                    if( answer.status ) {
+                        setTimeout(function(){
+                            window.location.href = answer.redirect;
+                        }, 500);
+                    }
+                },
+                error: function(answer) {
+                    showNotify({ title: 'Login', message: 'Failed request', type: 'Success' });
                 }
+
             });
         });
 
@@ -30,6 +41,16 @@
                     email: email,
                     password: password,
                     _token: csrfToken
+                },
+                success: function(answer) {
+                    if( answer.status ) {
+                        setTimeout(function(){
+                            window.location.href = answer.redirect;
+                        }, 500);
+                    }
+                },
+                error: function(answer) {
+                    showNotify({ title: 'Login', message: 'Failed request', type: 'Success' });
                 }
             });
         });

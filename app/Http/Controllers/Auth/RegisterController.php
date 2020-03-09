@@ -20,7 +20,7 @@ class RegisterController extends Controller
 
     public function __construct()
     {
-
+        $this->redirectTo = route('authLogin');
         $this->middleware('guest');
     }
 
@@ -28,28 +28,26 @@ class RegisterController extends Controller
         return view('auth/register');
     }
 
-
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone' => ['required', 'string', 'max:255'],
-
-        ]);
-    }
-
     protected function register(Request $request)
     {
-        User::create([
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+            'phone' => ['required', 'string', 'max:255'],
+        ]);
+
+        $register = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'access' => $request->access,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
         ]);
-        return redirect($this->redirectTo);
-
+        return response()->json([
+            'status' => true,
+            'message' => 'Successful',
+            'redirect' => $this->redirectTo
+        ]);
     }
 }

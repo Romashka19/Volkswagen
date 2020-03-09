@@ -23,15 +23,15 @@ Route::delete('admin/deleteCompl',"Admin\AdminController@deleteCompl");
 
 
 Route::get('about/{id}',"User\AboutController@index")->name('about');
-Route::post('about/createOrder',['as' => 'orderCreate','uses' => "User\OrderController@createOrder"]);
+Route::post('about/createOrder',['as' => 'orderCreate','uses' => "User\AboutController@createCarOrder"]);
 
 Route::get('configurate/{id}',"User\ConfigurateController@index")->name('configurate');
-Route::post('configurate',"User\ConfigurateController@createCustomCar");
+Route::post('configurate',['as' => 'customOrder', 'uses' => "User\ConfigurateController@createCustomCar"]);
 
 
 Route::get('register',"Auth\RegisterController@showRegister");
 Route::post('register', [ 'as' => 'authReqRegister', 'uses' => 'Auth\RegisterController@register']);
 
-Route::get('login',"Auth\LoginController@showLogin");
+Route::get('login',['as' => 'authLogin', 'uses' => "Auth\LoginController@showLogin"]);
 Route::post('login', [ 'as' => 'authReqLogin', 'uses' => 'Auth\LoginController@login']);
 Route::get('logout','Auth\LoginController@logout');

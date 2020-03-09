@@ -20,16 +20,23 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+
+
     public function login(Request $request){
+        $request->validate([
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string'],
+        ]);
 
         $statusAuth = $this->attemptLogin($request);
         if( $statusAuth ){
-            return redirect($this->redirectTo);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Successful',
+                'redirect' => $this->redirectTo,
+            ]);
         }
-        return response()->json([
-            'status' => false,
-            'message' => 'Login and password incorrect'
-        ]);
     }
 
     protected function attemptLogin($request){
@@ -37,6 +44,11 @@ class LoginController extends Controller
             'email' => $request->get('email'),
             'password' => $request->get('password')
         ], $request->has('remember'));
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('web');
     }
 
     public function showLogin()

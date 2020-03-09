@@ -13,11 +13,11 @@
             <div class="auth wrapper">
                 <div class="field">
                     <label for="email">email</label>
-                    <input id="login_email" type="email">
+                    <input required id="login_email" type="email">
                 </div>
                 <div class="field">
                     <label for="password">password</label>
-                    <input id="login_password" type="password">
+                    <input required id="login_password" type="password">
                 </div>
                 <div>
                     <button class="conflim" id="loginBtn">Login</button>

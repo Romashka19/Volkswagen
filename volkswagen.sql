@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 08 2020 г., 16:30
--- Версия сервера: 8.0.15
--- Версия PHP: 7.3.2
+-- Время создания: Мар 09 2020 г., 18:26
+-- Версия сервера: 10.3.13-MariaDB-log
+-- Версия PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -115,6 +115,32 @@ INSERT INTO `complectations` (`id`, `created_at`, `updated_at`, `name`, `engine_
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `customcar`
+--
+
+CREATE TABLE `customcar` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `wheels_id` bigint(20) UNSIGNED NOT NULL,
+  `complectation_id` bigint(20) UNSIGNED NOT NULL,
+  `color_id` bigint(20) UNSIGNED NOT NULL,
+  `interior_id` bigint(20) UNSIGNED NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `customcar`
+--
+
+INSERT INTO `customcar` (`id`, `created_at`, `updated_at`, `wheels_id`, `complectation_id`, `color_id`, `interior_id`, `price`) VALUES
+(1, '2020-03-09 23:29:18', '2020-03-09 23:29:18', 4, 6, 3, 3, 1000000),
+(2, '2020-03-09 23:32:38', '2020-03-09 23:32:38', 3, 11, 3, 4, 1000000),
+(11, '2020-03-10 00:14:57', '2020-03-10 00:14:57', 3, 11, 2, 2, 1000000);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `engines`
 --
 
@@ -153,7 +179,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -227,18 +253,19 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2020_02_28_121253_create_cars_table', 2),
 (24, '2020_02_27_135026_create_order_table', 3),
-(61, '2014_10_12_000000_create_users_table', 4),
-(62, '2014_10_12_100000_create_password_resets_table', 4),
-(63, '2019_08_19_000000_create_failed_jobs_table', 4),
-(64, '2020_02_27_125510_create_engines_table', 4),
-(65, '2020_02_27_125804_create_gearboxes_table', 4),
-(66, '2020_02_27_125932_create_models_table', 4),
-(67, '2020_02_27_130052_create_complectations_table', 4),
-(68, '2020_02_27_130259_create_wheels_table', 4),
-(69, '2020_02_27_130445_create_colors_table', 4),
-(70, '2020_02_27_132614_create_interiors_table', 4),
-(71, '2020_03_01_123301_create_cars_table', 4),
-(72, '2020_03_01_123427_create_order_table', 4);
+(74, '2014_10_12_000000_create_users_table', 4),
+(75, '2014_10_12_100000_create_password_resets_table', 4),
+(76, '2019_08_19_000000_create_failed_jobs_table', 4),
+(77, '2020_02_27_125510_create_engines_table', 4),
+(78, '2020_02_27_125804_create_gearboxes_table', 4),
+(79, '2020_02_27_125932_create_models_table', 4),
+(80, '2020_02_27_130052_create_complectations_table', 4),
+(81, '2020_02_27_130259_create_wheels_table', 4),
+(82, '2020_02_27_130445_create_colors_table', 4),
+(83, '2020_02_27_132614_create_interiors_table', 4),
+(84, '2020_03_01_123301_create_cars_table', 4),
+(85, '2020_03_01_123427_create_order_table', 4),
+(86, '2020_03_09_125006_create_customcar_table', 4);
 
 -- --------------------------------------------------------
 
@@ -288,6 +315,7 @@ CREATE TABLE `order` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `car_id` bigint(20) UNSIGNED NOT NULL,
+  `custom_car_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `address` char(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -296,8 +324,13 @@ CREATE TABLE `order` (
 -- Дамп данных таблицы `order`
 --
 
-INSERT INTO `order` (`id`, `created_at`, `updated_at`, `car_id`, `user_id`, `address`) VALUES
-(4, '2020-03-07 01:05:55', '2020-03-07 01:05:55', 4, 6, 'Privilna 1-9');
+INSERT INTO `order` (`id`, `created_at`, `updated_at`, `car_id`, `custom_car_id`, `user_id`, `address`) VALUES
+(4, '2020-03-07 01:05:55', '2020-03-07 01:05:55', 4, 0, 6, 'Privilna 1-9'),
+(5, '2020-03-09 23:21:03', '2020-03-09 23:21:03', 4, 0, 9, 'gsadfgsdg234'),
+(6, '2020-03-09 23:23:48', '2020-03-09 23:23:48', 10, 0, 9, 'kudato'),
+(7, '2020-03-10 00:14:57', '2020-03-10 00:14:57', 0, 11, 9, 'ububub1 23'),
+(8, '2020-03-10 00:29:30', '2020-03-10 00:29:30', 7, 0, 9, 'karasik'),
+(9, '2020-03-10 00:43:27', '2020-03-10 00:43:27', 4, 0, 10, 'makarova 123');
 
 -- --------------------------------------------------------
 
@@ -337,7 +370,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `phone`, `access`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (6, 'Dani4ka TEst', 'qwe@qwe.qwe', NULL, '123', 'admin', '$2y$10$wKYreunMoEq4PAHzAW.souJV9ju/dZQJ6s4ObNKsxm2EjqgwwSRyW', NULL, '2020-03-06 22:09:07', '2020-03-06 22:09:07'),
 (7, 'Andrii', 'andr@mail.ru', NULL, '123', 'user', '$2y$10$iXXdcZNj8bnlwgI.Wh5wpu4Aa.Rlq7x7O9ezeV/JHVxvjp6VZmDAy', NULL, '2020-03-06 22:19:21', '2020-03-06 22:19:21'),
-(8, 'dani4ka', '228@gmail.com', NULL, '123', 'user', '$2y$10$RFWhiCNHUZi7L0/cD9GFDORCbsl.UfYD86VlrvLqGPSFx/2V.ebEi', NULL, '2020-03-08 11:23:36', '2020-03-08 11:23:36');
+(8, 'dani4ka', '228@gmail.com', NULL, '123', 'user', '$2y$10$RFWhiCNHUZi7L0/cD9GFDORCbsl.UfYD86VlrvLqGPSFx/2V.ebEi', NULL, '2020-03-08 11:23:36', '2020-03-08 11:23:36'),
+(9, 'Danya Admin4ik', 'admin@gmail.com', NULL, '123', 'admin', '$2y$10$pi.Ar8RquyeBa3DR/zOHNu99fv7EOKqnXsXBBLAZlWfBiQm4M3ZaS', NULL, '2020-03-09 23:17:01', '2020-03-09 23:17:01'),
+(10, 'Damba', '123', NULL, '123', 'user', '$2y$10$lSSMBfxQdpaXWnMeI/OuhOno3yvXuVQTWYluzOaFBHma28M8U91fy', NULL, '2020-03-10 00:32:12', '2020-03-10 00:32:12'),
+(11, 'danya', '228@mail', NULL, '123', 'user', '$2y$10$Edrb.ESe8FTese2oIna1/.09K7Gd22dkEt0AQ4ksYSyItxJqc3j3m', NULL, '2020-03-10 00:56:02', '2020-03-10 00:56:02');
 
 -- --------------------------------------------------------
 
@@ -387,6 +423,12 @@ ALTER TABLE `colors`
 -- Индексы таблицы `complectations`
 --
 ALTER TABLE `complectations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `customcar`
+--
+ALTER TABLE `customcar`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -473,6 +515,12 @@ ALTER TABLE `complectations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT для таблицы `customcar`
+--
+ALTER TABLE `customcar`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT для таблицы `engines`
 --
 ALTER TABLE `engines`
@@ -500,7 +548,7 @@ ALTER TABLE `interiors`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT для таблицы `models`
@@ -512,13 +560,13 @@ ALTER TABLE `models`
 -- AUTO_INCREMENT для таблицы `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `wheels`
