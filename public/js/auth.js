@@ -21,7 +21,7 @@
                     if( answer.status ) {
                         setTimeout(function(){
                             window.location.href = answer.redirect;
-                        }, 500);
+                        }, 300);
                     }
                 },
                 error: function(answer) {
@@ -46,7 +46,7 @@
                     if( answer.status ) {
                         setTimeout(function(){
                             window.location.href = answer.redirect;
-                        }, 500);
+                        }, 300);
                     }
                 },
                 error: function(answer) {

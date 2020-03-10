@@ -1,218 +1,235 @@
-@extends("layouts.layout")
+@extends("layouts.adminLayout")
 
 @section("page-content")
-    <div class="equipment-container">
+    <div class="equipment-container bg-light">
         <div class="equipment">
-            <div class="container">
-                <h1>Engines</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>volume</th>
-                        <th>power</th>
-                        <th>fuel</th>
-                        <th>price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($engines as $engine)
+            <div class="row">
+                <div class="col-4">
+                    <h1>Engines</h1>
+                    <table>
+                        <thead>
                         <tr>
-                            <td>{{ $engine->id }}</td>
-                            <td>{{ $engine->name }}</td>
-                            <td>{{ $engine->volume }}</td>
-                            <td>{{ $engine->power }}</td>
-                            <td>{{ $engine->fuel }}</td>
-                            <td>{{ $engine->price }}</td>
-                            <td>
-                            </td>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>volume</th>
+                            <th>power</th>
+                            <th>fuel</th>
+                            <th>price</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                        @foreach($engines as $engine)
+                            <tr>
+                                <td>{{ $engine->id }}</td>
+                                <td>{{ $engine->name }}</td>
+                                <td>{{ $engine->volume }}</td>
+                                <td>{{ $engine->power }}</td>
+                                <td>{{ $engine->fuel }}</td>
+                                <td>{{ $engine->price }}</td>
+                                <td>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
                 <!----------------------------------------------------------------------------------------------------------->
-                <h1>GearBoxes</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Type</th>
-                        <th>name</th>
-                        <th>GearsCount</th>
-                        <th>price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($gearboxes as $gearbox)
+                <div class="col-4">
+                    <h1>GearBoxes</h1>
+                    <table>
+                        <thead>
                         <tr>
-                            <td>{{ $gearbox->id }}</td>
-                            <td>{{ $gearbox->type }}</td>
-                            <td>{{ $gearbox->name }}</td>
-                            <td>{{ $gearbox->gears_count }}</td>
-                            <td>{{ $gearbox->price }}</td>
-                            <td>
-
-                            </td>
+                            <th>id</th>
+                            <th>Type</th>
+                            <th>name</th>
+                            <th>GearsCount</th>
+                            <th>price</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                        @foreach($gearboxes as $gearbox)
+                            <tr>
+                                <td>{{ $gearbox->id }}</td>
+                                <td>{{ $gearbox->type }}</td>
+                                <td>{{ $gearbox->name }}</td>
+                                <td>{{ $gearbox->gears_count }}</td>
+                                <td>{{ $gearbox->price }}</td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
                 <!----------------------------------------------------------------------------------------------------------->
-                <h1>Models</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>photo</th>
-                        <th></th>
-                    </tr>
-                    @foreach($models as $model)
+                <div class="col-4">
+                    <h1>Models</h1>
+                    <table>
+                        <thead>
                         <tr>
-                            <td>{{ $model->id }}</td>
-                            <td>{{ $model->name }}</td>
-                            <td>{{ $model->price }}</td>
-                            <td>{{ $model->photo }}</td>
-                            <td>
-
-                            </td>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>photo</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                        @foreach($models as $model)
+                            <tr>
+                                <td>{{ $model->id }}</td>
+                                <td>{{ $model->name }}</td>
+                                <td>{{ $model->price }}</td>
+                                <td>{{ $model->photo }}</td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
 <!----------------------------------------------------------------------------------------------------------->
-                <h1>Wheels</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Radius</th>
-                        <th>photo</th>
-                        <th>price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($wheels as $wheel)
+                <div class="col-4">
+                    <h1>Wheels</h1>
+                    <table>
+                        <thead>
                         <tr>
-                            <td>{{ $wheel->id }}</td>
-                            <td>{{ $wheel->name }}</td>
-                            <td>{{ $wheel->radius }}</td>
-                            <td>{{ $wheel->photo }}</td>
-                            <td>{{ $wheel->price }}</td>
-                            <td>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Radius</th>
+                            <th>photo</th>
+                            <th>price</th>
+                            <th></th>
+                        </tr>
+                        @foreach($wheels as $wheel)
+                            <tr>
+                                <td>{{ $wheel->id }}</td>
+                                <td>{{ $wheel->name }}</td>
+                                <td>{{ $wheel->radius }}</td>
+                                <td>{{ $wheel->photo }}</td>
+                                <td>{{ $wheel->price }}</td>
+                                <td>
 
-                            </td>
-                        </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
                 <!----------------------------------------------------------------------------------------------------------->
-                <h1>Colors</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Value</th>
-                        <th>price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($colors as $color)
+                <div class="col-4">
+                    <h1>Colors</h1>
+                    <table>
+                        <thead>
                         <tr>
-                            <td>{{ $color->id }}</td>
-                            <td>{{ $color->name }}</td>
-                            <td>{{ $color->value }}</td>
-                            <td>{{ $color->price }}</td>
-                            <td>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>price</th>
+                            <th></th>
+                        </tr>
+                        @foreach($colors as $color)
+                            <tr>
+                                <td>{{ $color->id }}</td>
+                                <td>{{ $color->name }}</td>
+                                <td>{{ $color->value }}</td>
+                                <td>{{ $color->price }}</td>
+                                <td>
 
-                            </td>
-                        </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
                 <!----------------------------------------------------------------------------------------------------------->
-                <h1>interiors</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Material</th>
-                        <th>color</th>
-                        <th>price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($interiors as $interior)
+                <div class="col-4">
+                    <h1>interiors</h1>
+                    <table>
+                        <thead>
                         <tr>
-                            <td>{{ $interior->id }}</td>
-                            <td>{{ $interior->name }}</td>
-                            <td>{{ $interior->material }}</td>
-                            <td>{{ $interior->color }}</td>
-                            <td>{{ $interior->price }}</td>
-                            <td>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Material</th>
+                            <th>color</th>
+                            <th>price</th>
+                            <th></th>
+                        </tr>
+                        @foreach($interiors as $interior)
+                            <tr>
+                                <td>{{ $interior->id }}</td>
+                                <td>{{ $interior->name }}</td>
+                                <td>{{ $interior->material }}</td>
+                                <td>{{ $interior->color }}</td>
+                                <td>{{ $interior->price }}</td>
+                                <td>
 
-                            </td>
-                        </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
                 <!----------------------------------------------------------------------------------------------------------->
-                <h1>Complectations</h1>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal_cmpl">create</button>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Engine_id</th>
-                        <th>Gear_id</th>
-                        <th>Model_id</th>
-                        <th></th>
-                    </tr>
-                    @foreach($complectations as $complectation)
+                <div class="col-5">
+                    <h1>Complectations</h1>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal_cmpl">create</button>
+                    <table>
+                        <thead>
                         <tr>
-                            <td >{{ $complectation->id }}</td>
-                            <td>{{ $complectation->name }}</td>
-                            <td>{{ $complectation->engine_id }}</td>
-                            <td>{{ $complectation->gearbox_id }}</td>
-                            <td>{{ $complectation->model_id }}</td>
-                            <td>
-                                <button type="button" class="btn btn-danger delete-coml"  data-value=" {{ $complectation->id }}">Delete</button>
-                            </td>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Engine_id</th>
+                            <th>Gear_id</th>
+                            <th>Model_id</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                    </thead>
-                </table>
+                        @foreach($complectations as $complectation)
+                            <tr>
+                                <td >{{ $complectation->id }}</td>
+                                <td>{{ $complectation->name }}</td>
+                                <td>{{ $complectation->engine_id }}</td>
+                                <td>{{ $complectation->gearbox_id }}</td>
+                                <td>{{ $complectation->model_id }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger delete-coml"  data-value=" {{ $complectation->id }}">Delete</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
                 <!----------------------------------------------------------------------------------------------------------->
-                <h1>Cars</h1>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal_cars">create</button>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Wheels_id</th>
-                        <th>Complectation_id</th>
-                        <th>Color_id</th>
-                        <th>Interior_id</th>
-                        <th>Price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($cars as $car)
+                <div class="col-5">
+                    <h1>Cars</h1>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_modal_cars">create</button>
+                    <table>
+                        <thead>
                         <tr>
-                            <td >{{ $car->id }}</td>
-                            <td>{{ $car->wheels_id }}</td>
-                            <td>{{ $car->complectation_id }}</td>
-                            <td>{{ $car->color_id }}</td>
-                            <td>{{ $car->interior_id }}</td>
-                            <td>{{ $car->price }}</td>
-                            <td>
-                                <button type="button" class="btn btn-danger delete-car"  data-value=" {{ $car->id }}">Delete</button>
-                            </td>
+                            <th>id</th>
+                            <th>Wheels_id</th>
+                            <th>Complectation_id</th>
+                            <th>Color_id</th>
+                            <th>Interior_id</th>
+                            <th>Price</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                    </thead>
-                </table>
-                <!------->
+                        @foreach($cars as $car)
+                            <tr>
+                                <td >{{ $car->id }}</td>
+                                <td>{{ $car->wheels_id }}</td>
+                                <td>{{ $car->complectation_id }}</td>
+                                <td>{{ $car->color_id }}</td>
+                                <td>{{ $car->interior_id }}</td>
+                                <td>{{ $car->price }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger delete-car"  data-value=" {{ $car->id }}">Delete</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

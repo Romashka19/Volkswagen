@@ -15,11 +15,13 @@ Route::get('/',['as' => 'mainPage','uses' => "User\PageController@main"]);
 Route::get('models/',"User\PageController@models")->name('models');
 
 
-Route::get('admin',"Admin\AdminController@index")->middleware('auth');
+Route::get('admin/dashboard',"Admin\AdminController@index")->middleware('auth');
+Route::get('admin/users',"Admin\AdminController@users")->middleware('auth');
 Route::post('admin/createCar',"Admin\AdminController@createCar");
 Route::post('admin/createCompl',"Admin\AdminController@createCompl");
 Route::delete('admin/deleteCar',"Admin\AdminController@deleteCar");
 Route::delete('admin/deleteCompl',"Admin\AdminController@deleteCompl");
+
 
 
 Route::get('about/{id}',"User\AboutController@index")->name('about');

@@ -34,7 +34,7 @@
                 </div>
                 <ul class="menuTop">
                     @can('admin-panel')
-                        <li><a href="{{ asset('admin') }}" class="linkAuth">ADMIN</a></li>
+                        <li><a href="{{ asset('admin/dashboard') }}" class="linkAuth">ADMIN</a></li>
                     @endcan
                     @guest
                         <li><a href="{{ asset('login') }}" class="linkAuth">SingIn</a></li>

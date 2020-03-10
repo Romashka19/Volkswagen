@@ -37,6 +37,23 @@ class AdminController extends Controller
 
     }
 
+    function users (){
+        if(Gate::allows('admin-panel')){
+            $users = DB::select('select * from users');
+            $models = DB::select('select * from models');
+            $complectations = DB::select('select * from complectations');
+            $cars = DB::select('select * from cars');
+            return view("admin/users",[
+                'users' => $users,
+                'models' => $models,
+                'complectations' => $complectations,
+                'cars' => $cars,
+            ]);
+        } else {
+            return view("main/index");
+        }
+    }
+
     function createCar(Request $request){
         $car = Cars::create([
             'wheels_id'  => $request->wheels_id,
