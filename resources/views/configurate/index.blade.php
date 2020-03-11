@@ -12,8 +12,7 @@
                 <div class="properties-container">
                     <form class="forms-style" method="post" action="/configurate">
                         {{ csrf_field() }}
-                        <p>Загальна ціна*:  price UAH</p>
-                        <p>Ціна додаткового обладнання: price UAH</p>
+                        <p>Загальна ціна*: {{ $price }}  UAH</p>
                         <h3>Екстер’єр</h3>
                         <h4>Колір єкстер’єру</h4>
                         <select name="color_id">
@@ -43,8 +42,8 @@
                                 <option value="{{ $interior->id }}">{{ $interior->material }}-{{ $interior->color }}</option>
                             @endforeach
                         </select>
-                        <p>Aдреса куди доставити авто</p>
-                        <input required type="text" name="address">
+                        <h3>Aдреса куди доставити авто</h3>
+                        <input class="form-control" required type="text" name="address">
                         <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <button type="submit" class="save-car">Зберегти</button>
                     </form>

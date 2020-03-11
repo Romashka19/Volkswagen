@@ -15,6 +15,7 @@ class ConfigurateController extends Controller
 {
     function index($id){
         $model = Models::find($id);
+        $price = $model->price;
         $complectations = DB::select('select * from complectations');
         $wheels = DB::select('select * from wheels');
         $interiors = DB::select('select * from interiors');
@@ -25,6 +26,7 @@ class ConfigurateController extends Controller
             'wheels' => $wheels,
             'interiors' => $interiors,
             'colors' => $colors,
+            'price' => $price,
         ]);
     }
 

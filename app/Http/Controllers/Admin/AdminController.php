@@ -62,7 +62,7 @@ class AdminController extends Controller
             'interior_id' => $request->interior_id,
             'price' => $request->price,
         ]);
-        return redirect('admin/index');
+        return redirect('admin/dashboard');
     }
 
     function createCompl(Request $request){
@@ -72,7 +72,7 @@ class AdminController extends Controller
             'model_id' => $request->model_id,
             'gearbox_id' => $request->gearbox_id,
         ]);
-        return redirect('admin');
+        return redirect('admin/dashboard');
     }
 
     function deleteCompl($id , Request $request){

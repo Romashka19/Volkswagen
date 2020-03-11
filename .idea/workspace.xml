@@ -116,22 +116,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wordpress" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\public" />
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources" />
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\sass" />
-      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app\Models" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app\Http\Controllers\User" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\views\layouts" />
       <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\app\Http\Controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\public" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\sass" />
+      <recent name="C:\Users\Danya\Desktop\OSPanel\domains\VolkswagenSite\resources\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,7 +176,8 @@
       <workItem from="1583490289487" duration="16273000" />
       <workItem from="1583666934797" duration="4235000" />
       <workItem from="1583751705011" duration="15164000" />
-      <workItem from="1583849900454" duration="6080000" />
+      <workItem from="1583849900454" duration="6270000" />
+      <workItem from="1583930010828" duration="3634000" />
     </task>
     <servers />
   </component>
@@ -192,9 +193,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583766048153" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1583408736076">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1583936281170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583408736076" />
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583936281170" />
   </component>
 </project>

@@ -17,10 +17,10 @@ Route::get('models/',"User\PageController@models")->name('models');
 
 Route::get('admin/dashboard',"Admin\AdminController@index")->middleware('auth');
 Route::get('admin/users',"Admin\AdminController@users")->middleware('auth');
-Route::post('admin/createCar',"Admin\AdminController@createCar");
-Route::post('admin/createCompl',"Admin\AdminController@createCompl");
-Route::delete('admin/deleteCar',"Admin\AdminController@deleteCar");
-Route::delete('admin/deleteCompl',"Admin\AdminController@deleteCompl");
+Route::post('admin/dashboard/createCar',"Admin\AdminController@createCar");
+Route::post('admin/dashboard/createCompl',"Admin\AdminController@createCompl");
+Route::delete('admin/dashboard/deleteCar',"Admin\AdminController@deleteCar");
+Route::delete('admin/dashboard/deleteCompl',"Admin\AdminController@deleteCompl");
 
 
 

@@ -97,16 +97,22 @@
                     </tr>
                     <tr>
                         <td>Ціна</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach($model->complectations as $complectation)
+                            @foreach($complectation->cars as $car)
+                                <td>{{ $price + $complectation->gearboxes->price +
+                                                $complectation->engines->price +
+                                                $car->wheels->price +
+                                                $car->colors->price +
+                                                $car->interior->price}}</td>
+                            @endforeach
+                        @endforeach
                     </tr>
                     @guest
                         <tr>
                             <td></td>
-                            <td>Щоб купити авто увуйдыть в акаунт</td>
-                            <td>Щоб купити авто увуйдыть в акаунт</td>
-                            <td>Щоб купити авто увуйдыть в акаунт</td>
+                            <td>Щоб купити авто увiйдiть в акаунт</td>
+                            <td>Щоб купити авто увiйдiть в акаунт</td>
+                            <td>Щоб купити авто увiйдiть в акаунт</td>
                         </tr>
                     @else
                         <tr>

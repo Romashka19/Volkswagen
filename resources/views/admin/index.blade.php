@@ -328,7 +328,7 @@
                 let gearbox_id = $("#gearbox-select").val();
 
                 $.ajax({
-                    url : 'admin/createCompl',
+                    url : 'dashboard/createCompl',
                     type: 'post',
                     dataType: "json",
                     data : {
@@ -358,7 +358,7 @@
                 let price = $("#car-price").val();
 
                 $.ajax({
-                    url : 'admin/createCar',
+                    url : 'dashboard/createCar',
                     type: 'post',
                     dataType: "json",
                     data : {
@@ -381,7 +381,7 @@
             $('.delete-coml').on('click',function () {
                 let id = $(this).data('value');
                 $.ajax({
-                    url : '/admin/' + id,
+                    url : '/admin/dashboard/' + id,
                     type: 'post',
                     dataType: "json",
                     data : {
@@ -403,7 +403,7 @@
             $('.delete-car').on('click',function () {
                 let id = $(this).data('value');
                 $.ajax({
-                    url : '/admin/' + id,
+                    url : '/admin/dashboard/' + id,
                     type: 'post',
                     dataType: "json",
                     data : {
