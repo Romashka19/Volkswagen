@@ -35,7 +35,16 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'phone' => ['required', 'string', 'max:255'],
+        ],[
+            'name.required' => 'Введите имя',
+            'email.required' => 'Введите email',
+            'password.required' => 'Введите пароль',
+            'phone.required' => 'Введите ваш телефон',
+            'email.email' => 'Введите email!',
+            'email.unique' => 'Email уже существует',
+            'password.min' => 'Введите пароль минимум 8 символов',
         ]);
+
 
         $register = User::create([
             'name' => $request->name,

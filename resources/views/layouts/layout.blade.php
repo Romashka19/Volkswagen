@@ -37,10 +37,10 @@
                         <li><a href="{{ asset('admin/dashboard') }}" class="linkAuth">ADMIN</a></li>
                     @endcan
                     @guest
-                        <li><a href="{{ asset('login') }}" class="linkAuth">SingIn</a></li>
+                        <li><a href="{{ asset('login') }}" class="linkAuth">SignIn</a></li>
                         <li><a href="{{ asset('register') }}" class="linkAuth">Register</a></li>
                     @else
-                        <li><a class="linkAuth">{{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ asset('user') }}" class="linkAuth">{{ Auth::user()->name }}</a></li>
                         <li><a href="{{ asset('logout') }}" class="linkAuth">Logout</a></li>
                     @endguest
                 </ul>

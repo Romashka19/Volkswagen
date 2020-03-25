@@ -39,6 +39,7 @@ class ConfigurateController extends Controller
             'address.max' => 'Поле повинно бути менше 30 символів!'
         ]);
         $custom_car = CustomCar::create([
+
             'wheels_id'  => $request->wheels_id,
             'complectation_id' => $request->complectation_id,
             'color_id' => $request->color_id,
@@ -55,5 +56,6 @@ class ConfigurateController extends Controller
         ]);
        return redirect('/');
     }
+
 
 }

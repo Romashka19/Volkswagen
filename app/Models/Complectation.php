@@ -23,6 +23,14 @@ class Complectation extends Model
         );
     }
 
+    function models(){
+        return $this->belongsTo(
+            Models::class,
+            'model_id',
+            'id'
+        );
+    }
+
     function cars(){
         return $this->hasMany(
             Cars::class,

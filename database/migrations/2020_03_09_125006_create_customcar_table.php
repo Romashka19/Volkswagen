@@ -16,7 +16,7 @@ class CreateCustomcarTable extends Migration
         Schema::create('customcar', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->unsignedBigInteger('wheels_id');
+            $table->integer('wheels_id');
             $table->unsignedBigInteger('complectation_id');
             $table->unsignedBigInteger('color_id');
             $table->unsignedBigInteger('interior_id');

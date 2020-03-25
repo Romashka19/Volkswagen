@@ -5,7 +5,7 @@
     <div class="customise-container">
         <div class="container">
             <div class="title">
-                <h1>Tiguan</h1>
+                <h1>{{ $model->name }}</h1>
             </div>
             <div class="customise wrapper">
                 <div class="car"><img src="{{ asset($model->photo_customise) }}"/></div>

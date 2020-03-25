@@ -37,3 +37,5 @@ Route::post('register', [ 'as' => 'authReqRegister', 'uses' => 'Auth\RegisterCon
 Route::get('login',['as' => 'authLogin', 'uses' => "Auth\LoginController@showLogin"]);
 Route::post('login', [ 'as' => 'authReqLogin', 'uses' => 'Auth\LoginController@login']);
 Route::get('logout','Auth\LoginController@logout');
+
+Route::get('user','User\UserController@user');

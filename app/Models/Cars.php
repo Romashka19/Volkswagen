@@ -16,6 +16,14 @@ class Cars extends Model
         );
     }
 
+    function complectations(){
+        return $this->belongsTo(
+            Complectation::class,
+            'complectation_id',
+            'id'
+        );
+    }
+
     function wheels(){
         return $this->belongsTo(
             Wheels::class,

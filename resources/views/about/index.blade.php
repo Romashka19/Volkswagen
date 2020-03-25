@@ -37,7 +37,6 @@
         <div class="comfort">
             <div class="comfort-title">
                 <h1>{{ $model->title_second }}</h1>
-                <p>{{ $model->other_text }}</p>
             </div>
             <div class="comfort-info wrapper">
                 <div class="info">
@@ -67,9 +66,9 @@
                     </tr>
                     <tr>
                         <td>Масса</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $model->other_text }}</td>
+                        <td>{{ $model->other_text }}</td>
+                        <td>{{ $model->other_text }}</td>
                     </tr>
                     <tr>
                         <td>Путужність</td>
@@ -79,15 +78,15 @@
                     </tr>
                     <tr>
                         <td>Втрати палива</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach($model->complectations as $complectation)
+                            <td>{{ $complectation->engines->fuel }}л./100км.</td>
+                        @endforeach
                     </tr>
                     <tr>
                         <td>Максимальна швидкість</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach($model->complectations as $complectation)
+                            <td>{{ $complectation->engines->volume }}км./год.</td>
+                        @endforeach
                     </tr>
                     <tr>
                         <td>Коробка передач</td>
@@ -119,7 +118,7 @@
                             <td></td>
                             @foreach($model->complectations as $complectation)
                                 @foreach($complectation->cars as $car)
-                                    <td><button value="{{ $car->id }}" id="car-id" class="btn btn-primary" data-toggle="modal" data-target="#create_order">Купити</button></td>
+                                    <td><button value="{{ $car->id }}" id="car-id" class="buy-car" data-toggle="modal" data-target="#create_order">Купити</button></td>
                                 @endforeach
                             @endforeach
                         </tr>
