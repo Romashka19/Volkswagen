@@ -45,7 +45,6 @@ class RegisterController extends Controller
             'password.min' => 'Введите пароль минимум 8 символов',
         ]);
 
-
         $register = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -53,10 +52,18 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
         ]);
-        return response()->json([
-            'status' => true,
-            'message' => 'Successful',
-            'redirect' => $this->redirectTo
-        ]);
+        if ($register) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Success!',
+                'redirect' => $this->redirectTo
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Registration failed!',
+                'redirect' => $this->redirectTo
+            ]);
+        }
     }
 }

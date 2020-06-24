@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="6" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="27.345765">
+    <testsuite name="Feature" tests="6" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="27.345765">
+      <testsuite name="Tests\Feature\AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" tests="6" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="27.345765">
+        <testcase name="testAccessToLogin" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" line="12" assertions="2" time="24.679598"/>
+        <testcase name="testAccessToRegister" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" line="18" assertions="2" time="0.175591"/>
+        <testcase name="testAccessToLoginWhenAuthenticated" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" line="24" assertions="2" time="1.401254"/>
+        <testcase name="testAccessToRegisterWhenAuthenticated" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" line="30" assertions="2" time="0.045212"/>
+        <testcase name="testLoginWithCorrectCredentials" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" line="36" assertions="4" time="0.944713"/>
+        <testcase name="testLoginWithIncorrectCredentials" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="C:\Program Files\openserver\domains\vw\tests\Feature\AuthTest.php" line="54" assertions="3" time="0.099397"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

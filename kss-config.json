@@ -1,0 +1,9 @@
+{
+    "title": "Volkswagen Web Application Styleguide",
+    "source": "public/css/",
+    "destination": "public/styleguide/",
+    "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
+    "css": [
+        "../css/common.css"
+    ]
+}

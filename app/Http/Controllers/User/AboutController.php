@@ -1,30 +1,56 @@
 <?php
-
+/**
+ * @author Kazantsev D.
+ * @package App\Http\Controllers\User
+ * @version 0.5
+ * @abstract Controller for about-pages of any model
+ * @copyright Copyright 2020, Group 309, CHMNU
+ */
 namespace App\Http\Controllers\User;
-
 use App\Models\Models;
 use App\Models\Interior;
 use App\Models\Order;
+use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class AboutController extends Controller
-{
-
-    function index($id){
-        $model = Models::find($id);
-        $price = $model->price;
-        $complectations = DB::select('select * from complectations');
+class AboutController extends Controller {
+    /**
+     * @var Model
+     */
+    private $model;
+    /**
+     * @var array
+     */
+    private $complectations = [];
+    /**
+     * Gets unique id of the model and returns a View
+     * with all provided info
+     * @param int $id unique id of model
+     * @return View
+     */
+    function index($id) {
+        $this->model = Models::find($id);
+        $price = $this->model->price;
+        $this->complectations = DB::select('select * from complectations');
         return view('about/index',[
             'model' => Models::find($id),
-            'complectations' => $complectations,
+            'complectations' => $this->complectations,
             'price' => $price,
         ]);
     }
-
-    function createCarOrder(Request $request){
+    /**
+     * Gets Request object from POST-request,
+     * creates object of an Order and store it,
+     * then redirects on main page
+     * @param Request $request об'єкт запиту
+     * @return Redirector
+     */
+    function createCarOrder(Request $request) {
         $request->validate([
            'address' => 'required|min:3|max:30' ,
         ],[
@@ -32,7 +58,6 @@ class AboutController extends Controller
             'address.min' => 'Поле повинно бути більше 3 символів!',
             'address.max' => 'Поле повинно бути менше 30 символів!'
         ]);
-
         Order::create([
             'car_id'  => $request->car_id,
             'user_id' => $request->user_id,
@@ -41,6 +66,4 @@ class AboutController extends Controller
         ]);
         return redirect('/');
     }
-
-
 }

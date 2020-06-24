@@ -6,6 +6,7 @@
             let password = $('#register_password').val();
             let phone = $('#register_phone').val();
             let access = 'user';
+            console.log(name);
             $.ajax({
                 url: urlRoute['register'],
                 type: 'POST',
@@ -18,6 +19,7 @@
                     _token: csrfToken
                 },
                 success: function(answer) {
+                    console.log('success');
                     if( answer.status ) {
                         setTimeout(function(){
                             window.location.href = answer.redirect;
@@ -25,6 +27,7 @@
                     }
                 },
                 error: function(answer) {
+                    console.log('fail');
                     showNotify({ title: 'Login', message: 'Failed request', type: 'Success' });
                 }
 

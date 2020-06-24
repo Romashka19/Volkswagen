@@ -22,8 +22,6 @@ Route::post('admin/dashboard/createCompl',"Admin\AdminController@createCompl");
 Route::delete('admin/dashboard/deleteCar',"Admin\AdminController@deleteCar");
 Route::delete('admin/dashboard/deleteCompl',"Admin\AdminController@deleteCompl");
 
-
-
 Route::get('about/{id}',"User\AboutController@index")->name('about');
 Route::post('about/createOrder',['as' => 'orderCreate','uses' => "User\AboutController@createCarOrder"]);
 

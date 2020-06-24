@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
 
     use AuthenticatesUsers;
-    protected $redirectTo = '';
+    protected $redirectTo = '/';
 
     public function __construct()
     {
@@ -20,26 +20,29 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-
-
     public function login(Request $request){
-        $request->validate([
+        $result = $request->validate([
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string'],
         ]);
 
         $statusAuth = $this->attemptLogin($request);
-        if( $statusAuth ){
-
+        if($statusAuth){
             return response()->json([
                 'status' => true,
                 'message' => 'Successful',
                 'redirect' => $this->redirectTo,
             ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => $request->password,
+                'redirect' => 'login'
+            ]);
         }
     }
 
-    protected function attemptLogin($request){
+    protected function attemptLogin(Request $request){
         return $this->guard()->attempt([
             'email' => $request->get('email'),
             'password' => $request->get('password')
